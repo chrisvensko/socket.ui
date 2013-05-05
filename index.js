@@ -6,4 +6,4 @@ var init = function(app) {
 	});
 };
 
-exports.module = init;
+module.exports = init;
