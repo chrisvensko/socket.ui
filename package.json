@@ -1,0 +1,9 @@
+{
+  "name": "socket.ui",
+  "version": "0.0.1",
+  "dependencies": {
+    "socket.io": "~0.9.14"
+  },
+  "private": true,
+  "files": ["index.html"]
+}
