@@ -1,49 +1,27 @@
+<!DOCTYPE HTML>
 <html>
 <head>
+	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
-<body>
-	<button id="toggleSocketConnection" onClick="toggleConnection();">Connect</button>
-	<pre id="socketUiOutput"></pre>
+<body style="padding-top: 45px;">
+	<div class="navbar navbar-inverse navbar-fixed-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="brand" href="#"><b>WEB</b>Logger</a>
+				<button id="toggleSocketConnection" class="btn" onClick="toggleConnection();">Connect</button>
+			</div>
+		</div>
+	</div>
+	<div class="container">
+		<div class="row">
+			<div class="span12">
+				<pre id="socketUiOutput"></pre><br />
+			</div>
+		</div>
+	</div>
 	<script src="/socket.io/socket.io.js"></script>
-	<script src="/jquery.js"></script>
-	<script>
-		var connected = false;
-
-		toggleConnection = function() {
-			if(connected) {
-				window.disconnect();
-			} else {
-				window.connect();
-			}
-			setConnected();
-		};
-		var setConnected = function() {
-			var html = connected ? 'Disconnect' : 'Connect';
-			$('#toggleSocketConnection').html(html);
-		};
-
-		window.connect = function() {
-			connected = true;
-			console.log('Connecting to socket.io');
-			var socket = io.connect('http://localhost');
-			socket.on('data', function (obj) {
-				$('#socketUiOutput').append(obj.channel + ':' + obj.data + '\n');
-			});
-
-			socket.on('error', function(e) {
-				console.error(e);
-			});
-			window.connect = function() {
-				connected = true;
-				socket.socket.connect();
-			};
-			window.disconnect = function() {
-				connected = false;
-				socket.disconnect();
-			};
-		};
-		$('#socketUiOutput').append('Channel:msg\n=======\n');
-		toggleConnection();
-	</script>
+	<script src="jquery.js"></script>
+	<script src="socket.ui.js"></script>
+	<script src="bootstrap/js/bootstrap.min.js"></script>
 </body>
 </html>
