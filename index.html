@@ -3,12 +3,16 @@
 <head>
 	<link href="bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
 </head>
-<body style="padding-top: 45px;">
+<body style="padding-top: 50px;">
 	<div class="navbar navbar-inverse navbar-fixed-top">
 		<div class="navbar-inner">
 			<div class="container">
 				<a class="brand" href="#"><b>WEB</b>Logger</a>
 				<button id="toggleSocketConnection" class="btn" onClick="toggleConnection();">Connect</button>
+				<form class="navbar-form pull-right">
+					<input type="text" id="hookSocketUri" placeholder="uri (i.e. http://localhost:3000)"></input>
+					<button class="btn" onClick="subscribe();">Subscribe</button>
+				</form>
 			</div>
 		</div>
 	</div>
@@ -21,6 +25,7 @@
 	</div>
 	<script src="/socket.io/socket.io.js"></script>
 	<script src="jquery.js"></script>
+	<script src="underscore.js"></script>
 	<script src="socket.ui.js"></script>
 	<script src="bootstrap/js/bootstrap.min.js"></script>
 </body>

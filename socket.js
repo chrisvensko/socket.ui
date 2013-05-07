@@ -15,6 +15,10 @@ var init = function(app) {
 		res.sendfile(path.resolve(__dirname,'index.html'));
 	});
 
+	app.get('/weblogger/underscore.js', function(req, res) {
+		res.sendfile(path.resolve(__dirname, 'lib/underscore.js'));
+	});
+
 	app.get('/weblogger/socket.ui.js', function(req, res) {
 		res.sendfile(path.resolve(__dirname, 'lib/socket.ui.js'));
 	});
