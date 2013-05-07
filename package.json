@@ -16,12 +16,11 @@
   },
   "repository": {
     "type": "git",
-    "url": "ssh://git@bitbucket.org/chrisvensko/socket.ui.git"
+    "url": "https://github.com/chrisvensko/socket.ui.git"
   },
   "keywords": [
     "socket.io",
     "express"
   ],
-  "author": "Chris Vensko",
-  "license": "-"
+  "author": "Chris Vensko"
 }
