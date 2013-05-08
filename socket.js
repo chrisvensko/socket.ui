@@ -1,8 +1,6 @@
-var path = require('path')
-	express = require('express');
+var path = require('path');
 
 var init = function(app) {
-	//app.use('/weblogger/bootstrap', express.static(path.resolve(__dirname, '/lib/bootstrap')));
 	app.get('/weblogger/bootstrap/css/bootstrap.min.css', function(req, res) {
 		res.sendfile(path.resolve(__dirname, 'lib/bootstrap/css/bootstrap.min.css'));
 	});
